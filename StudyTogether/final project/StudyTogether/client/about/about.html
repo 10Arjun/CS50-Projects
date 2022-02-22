@@ -1,0 +1,56 @@
+<template name="about">
+
+    <blockquote>
+      <p>Studytoherthery is an organization dedicated to helping students succeed we do this by helping them interact with other student following the same issues.</p>
+    </blockquote>
+
+    <h4>The Process: Study Groups</h4>
+
+    <dl class="dl-horizontal">
+        <dt>Create study groups:</dt>
+        <dd>Users can check-in a study group to let others know they are available to study.</dd>
+
+        <dt>Browse study groups:</dt>
+        <dd>Users can find and join existing study groups.</dd>
+
+        <dt>Edit study groups:</dt>
+        <dd>Study group founders can edit group information.</dd>
+
+        <dt>Delete study groups:</dt>
+        <dd>Group founders can delete study groups as they become obsolete.</dd>
+    </dl>
+
+    <h4>The Process: Forums</h4>
+
+    <dl class="dl-horizontal">
+        <dt>Create posts:</dt>
+        <dd>Users can use the forum to ask the WeStudy community questions about their classes.</dd>
+
+        <dt>Browse posts:</dt>
+        <dd>Users can browse existing posts and filter the posts by tags.</dd>
+
+        <dt>Reply to posts:</dt>
+        <dd>Users can reply to posts to build a community knowledge base.</dd>
+
+        <dt>Delete posts:</dt>
+        <dd>Original posters can delete their posts at any time.</dd>
+    </dl>
+
+    <h4>Documentation</h4>
+
+    <dl class="dl-horizontal">
+        <dt>Documentation:</dt>
+        <dd><a href="{{pathFor route='about_documentation'}}">User Manual</a></dd>
+
+        <dt>Design:</dt>
+        <dd><a href="{{pathFor route='about_design'}}">Technical Details</a></dd>
+    </dl>
+
+    <h4>Demo Video</h4>
+
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rq0t732COzQ"></iframe>
+    </div>
+
+</template>

@@ -1,0 +1,57 @@
+<template name="forums_view">
+
+    <div class="alert alert-danger" role="alert" style="display: none;"></div>
+    <div class="alert alert-success" role="alert" style="display: none;"></div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-7">
+                    <h3 class="panel-title left post-author">{{post.title}}</h3>
+                </div>
+                 <div class="col-xs-5 right">
+                     Posted by {{getUserName(post.author)}} on {{formatDateTime(post.timestamp)}}
+                 </div>
+             </div>
+
+        </div>
+        <div class="panel-body">
+            {{post.content}}
+        </div>
+        <div class="panel-footer">
+            <b>Tags:&nbsp;&nbsp;&nbsp;&nbsp;</b>{{#each post.tags}}<a href="{{pathFor route='forums_tag' tag=this }}">{{this}}</a>&nbsp;&nbsp;&nbsp; {{/each}}
+        </div>
+    </div>
+
+    {{#each post.replies}}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-6 left reply-author">{{getUserName(author)}} says:</div>
+                <div class="col-xs-6 right">{{formatDateTime(timestamp)}}</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            {{content}}
+        </div>
+    </div>
+
+    {{/each}}
+
+    <form>
+
+        <div class="form-group">
+            <label for="reply">Reply</label>
+            <textarea class="form-control" rows="4" id="reply"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-default">Reply</button>
+
+    </form>
+
+    <hr/>
+
+    <button type="button" class="btn btn-danger" id="delete" style="display: none;" disabled>Delete Post</button>
+
+</template>

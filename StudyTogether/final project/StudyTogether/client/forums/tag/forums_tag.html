@@ -1,0 +1,21 @@
+<template name="forums_tag">
+
+    <div class="well">
+        <b>Filter Tag:&nbsp;&nbsp;&nbsp;&nbsp;</b><a href="{{pathFor route='forums_tag' tag=tag }}">{{tag}}</a>
+    </div>
+
+    <div class="list-group">
+        {{#each posts}}
+        <a href="{{pathFor route='forums_view' post_id=_id }}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{title}}</h4>
+            <p class="list-group-item-text ">
+                <div class="row">
+                    <div class="col-sm-6 left">Posted by {{getUserName(author)}}</div>
+                    <div class="col-sm-6 right">Posted: {{formatDateTime(timestamp)}}</div>
+                </div>
+            </p>
+        </a>
+        {{/each}}
+    </div>
+
+</template>

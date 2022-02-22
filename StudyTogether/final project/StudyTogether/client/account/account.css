@@ -1,0 +1,11 @@
+#account_change{
+    padding-bottom: 5px;
+}
+
+#password_change{
+    padding-top: 10px;
+}
+
+.reg_name {
+    max-width: 200px;
+}

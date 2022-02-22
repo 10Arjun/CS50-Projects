@@ -1,0 +1,25 @@
+<template name="forums">
+
+    <a class="btn btn-default btn-block" href="{{pathFor route='forums_create'}}" role="button"><span class="glyphicon glyphicon-plus"></span></a>
+
+    <div class="spacer" style="margin: 20px;"></div>
+
+    <div class="well row">
+        <b>Tags:&nbsp;&nbsp;&nbsp;&nbsp;</b>{{#each tags}}<a href="{{pathFor route='forums_tag' tag=this }}">{{this}}</a>&nbsp;&nbsp;&nbsp; {{/each}}
+    </div>
+
+    <div class="list-group">
+        {{#each posts}}
+        <a href="{{pathFor route='forums_view' post_id=_id }}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{title}}</h4>
+            <p class="list-group-item-text ">
+                <div class="row">
+                    <div class="col-sm-6 left">Posted by {{getUserName(author)}}</div>
+                    <div class="col-sm-6 right">Posted: {{formatDateTime(timestamp)}}</div>
+                </div>
+            </p>
+        </a>
+        {{/each}}
+    </div>
+
+</template>

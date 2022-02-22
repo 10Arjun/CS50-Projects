@@ -1,0 +1,8 @@
+h2.title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+div.instructions {
+    max-width: 900px;
+}

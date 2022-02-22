@@ -1,0 +1,54 @@
+<template name="design">
+
+    <h2 class="title">
+        Design: Technical Details
+    </h2>
+
+    <div class="description">
+        <p>
+            I created ST using Meteor, a JavaScript app platform written using node.js
+            that integrates with MongoDB and features real-time updating to changes in code,
+            client-side rendering of data, and ability to write both client and server
+            sides of the code in one language: JavaScript. We also used Git to collaborate between programmers.
+        </p>
+        <p>
+            To implement each viewable web page, in .html files we created templates, snippets of HTML that
+            include dynamic data and can be called in code by their template name so that
+            programmers don't need to write the same HTML code multiple times by hand. A specific example
+            of this is seen in the StudyTogether.html file, where we called the template sidebar using syntax which is part of a
+            language called Spacebars that Meteor uses to add functionality to HTML.  The folders and files are organized in the project by
+            path.  That is, files that load when you visit /accounts are in the client/accounts folder and
+            files that load when you visit /forums/view/[post_id] are located in the client/forums/view.
+        </p>
+        <p>
+            In our JavaScript code, we used the syntax Template.TemplateName.events to specify event handlers
+            for particular templates. For example, in login.js we first defined an event handler
+            to detect the login form submission event. Then, we wrote a function inside the event handler
+            using jQuery to get data from the login form (in this case, user email and password), check the email's
+            validity, and then log the user in if all went well, otherwise displaying an error message.
+        </p>
+        <p>
+            Also in the JS code for each template, there are onCreated() (or created) and/or onRendered() (or rendered)
+            to help handle how the template is loaded.  The created handler will run when the template is created and runs
+            only once. The rendered handler will run when the template is rendered in the DOM, and runs when data passed to the DOM changes.
+            Also, there is a handler called helpers() which is where a series of helper functions or variables are defined.  These
+            variables are what is available to the DOM in each JS file's coresponding HTML file using {{variable}} selectors.
+        </p>
+        <p>
+            For router configuration, we first defined a default layout template that applies to all templates.
+            We then used the Router.route syntax to define each route specified by the template's name and then map
+            the particular route to a function that routes the user to the specific web page. To ensure that some pages
+            would only be viewable to logged-in users, we included a security check which secures certain pages (such as
+            Groups and Forums) against unauthorized access. We also made sure to render a Page Not Found for routes that
+            do not exist.
+        </p>
+        <p>
+            To store data obtained from the Groups form and Posts form, we defined collections,
+            databases in Meteor that integrate with MongoDB. We chose to use MongoDB--and Meteor--in a large part because of
+            MongoDB's advantage over table-based relational databasees like MySQL in its structure that favors JSON-like documents,
+            which makes for faster integration of data.
+        </p>
+
+    </div>
+
+</template>
